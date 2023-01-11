@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-import ui.UIMenu;
-import ui.UIMenu.*;
+import static ui.UIMenu.*;
 public class Main {
     public static void main(String[] args) {
         /**
@@ -14,7 +13,7 @@ public class Main {
         myDoctor.showId();
          **/
 
-        UIMenu.showMenu();
+        showMenu();
 
 
     }
