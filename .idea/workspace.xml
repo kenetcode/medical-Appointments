@@ -52,6 +52,14 @@
       <option name="presentableId" value="Default" />
       <updated>1673034381438</updated>
     </task>
+    <task id="LOCAL-00001" summary="Creando el metodo showMenu para que los usuarios puedan elegir una opcion">
+      <created>1673329825912</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673329825912</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

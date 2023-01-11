@@ -4,7 +4,7 @@ import ui.UIMenu;
 import ui.UIMenu.*;
 public class Main {
     public static void main(String[] args) {
-
+        /**
         Doctor myDoctor = new Doctor();
         myDoctor.name = "Kenet Ortiz";
         myDoctor.showName();
@@ -12,6 +12,7 @@ public class Main {
 
         Doctor myDoctorKenet = new Doctor();
         myDoctor.showId();
+         **/
 
         UIMenu.showMenu();
 
