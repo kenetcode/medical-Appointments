@@ -4,6 +4,11 @@ import javax.script.ScriptContext;
 import java.util.Scanner;
 
 public class UIMenu {
+
+    public static String[] MONTHS = {"Enero","Febrero","Marzo",
+            "Abril","Mayo","Junio","Julio","Agosto", "Septiembre",
+            "Octubre", "Noviembre", "Diciembre"};
+
     public static void showMenu() {
         System.out.println("Bienvenido a mi sistema de citas medicas");
         System.out.println("Selecciona una opcion");
@@ -37,8 +42,7 @@ public class UIMenu {
         int respuesta = 0;
 
         do{
-            System.out.println("\n\n");
-            System.out.println("Paciente");
+            System.out.println("\nPaciente");
             System.out.println("1. Reservar una cita");
             System.out.println("2. Mis citas");
             System.out.println("0. Regresar al Menu anterior");
@@ -49,6 +53,11 @@ public class UIMenu {
             switch (respuesta){
                 case 1:
                     System.out.println(":: Cita reservada");
+
+                    for (int i = 0; i < 3; i++) {
+                        System.out.println((i+1) + ". " + MONTHS[i]);
+                    }
+
                     break;
                 case 2:
                     System.out.println(":: Mis citas");

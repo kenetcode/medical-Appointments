@@ -1,14 +1,18 @@
 public class Doctor {
     static int id = 0 ; //Autoincrement
     String name;
+    String email;
     String speciality;
 
     Doctor(){
-        System.out.println("Construyendo el objeto Doctor");
-        id++;
+        this.name = "Nombre por defecto";
+        this.speciality = "Especialidad por defecto";
     }
-    Doctor(String name){
-        System.out.println("El nombre del Doctor asignado es: " + name);
+
+    Doctor(String name, String speciality){
+        this.name = name;
+        this.speciality = speciality;
+        id++;
     }
 
     //Comportamientos
