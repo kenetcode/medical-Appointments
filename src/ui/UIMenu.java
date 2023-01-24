@@ -26,9 +26,14 @@ public class UIMenu {
                     break;
                 case 1:
                     System.out.println("Doctor");
+                    respuesta = 0;
                     break;
                 case 2:
                     showPatientMenu();
+                    //Aca había un error, cada vez que el programa ejecutaba el metodo anterior, la variable respuesta
+                    //conservava su valor en respuesta = 2, por lo que se repetia nuevamente el bucle, pero al cambiar
+                    //el valor de la variable respuesta = 0, ya queda solucionado.
+                    respuesta = 0;
                     break;
                 default:
                     System.out.println("\nPor favor selecciona una respuesta correcta");
@@ -39,7 +44,7 @@ public class UIMenu {
     }
 
     public static void showPatientMenu() {
-        int respuesta = 0;
+        int salirMenu = 0;
 
         do{
             System.out.println("\nPaciente");
@@ -48,9 +53,9 @@ public class UIMenu {
             System.out.println("0. Regresar al Menu anterior");
 
             Scanner sc = new Scanner(System.in);
-            respuesta = Integer.valueOf(sc.nextLine());
+            salirMenu = Integer.valueOf(sc.nextLine());
 
-            switch (respuesta){
+            switch (salirMenu){
                 case 0:
                 showMenu();
                 break;
@@ -68,6 +73,6 @@ public class UIMenu {
                     break;
             }
 
-        }while (respuesta != 0);
+        }while (salirMenu != 0);
     }
 }
