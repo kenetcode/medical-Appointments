@@ -21,14 +21,14 @@ public class UIMenu {
             respuesta = Integer.valueOf(sc.nextLine());
 
             switch (respuesta){
+                case 0:
+                    System.out.println("\nGracias por tu visita");
+                    break;
                 case 1:
                     System.out.println("Doctor");
                     break;
                 case 2:
                     showPatientMenu();
-                    break;
-                case 0:
-                    System.out.println("\nGracias por tu visita");
                     break;
                 default:
                     System.out.println("\nPor favor selecciona una respuesta correcta");
@@ -51,19 +51,17 @@ public class UIMenu {
             respuesta = Integer.valueOf(sc.nextLine());
 
             switch (respuesta){
+                case 0:
+                showMenu();
+                break;
                 case 1:
                     System.out.println(":: Cita reservada");
-
                     for (int i = 0; i < 3; i++) {
                         System.out.println((i+1) + ". " + MONTHS[i]);
                     }
-
                     break;
                 case 2:
                     System.out.println(":: Mis citas");
-                    break;
-                case 0:
-                    showMenu();
                     break;
                 default:
                     System.out.println("\nPor favor selecciona una respuesta correcta");
