@@ -1,78 +1,68 @@
 package ui;
 
-import javax.script.ScriptContext;
 import java.util.Scanner;
 
 public class UIMenu {
 
-    public static String[] MONTHS = {"Enero","Febrero","Marzo",
-            "Abril","Mayo","Junio","Julio","Agosto", "Septiembre",
-            "Octubre", "Noviembre", "Diciembre"};
+    public static String[] MONTHS = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
-    public static void showMenu() {
-        System.out.println("Bienvenido a mi sistema de citas medicas");
-        System.out.println("Selecciona una opcion");
+    public static void showMenu(){
+        System.out.println("Welcome to My Appointments");
+        System.out.println("Selecciona la opción deseada");
 
-        int respuesta = 0;
+        int response = 0;
+        do {
+            System.out.println("1. Doctor");
+            System.out.println("2. Patient");
+            System.out.println("0. Salir");
 
-        do{
-            System.out.println("1. Doctor\n2. Paciente\n0. Salir");
             Scanner sc = new Scanner(System.in);
-            respuesta = Integer.valueOf(sc.nextLine());
+            response = Integer.valueOf(sc.nextLine());
 
-            switch (respuesta){
-                case 0:
-                    System.out.println("\nGracias por tu visita");
-                    break;
+            switch (response){
                 case 1:
                     System.out.println("Doctor");
-                    respuesta = 0;
                     break;
                 case 2:
+                    response = 0;
                     showPatientMenu();
-                    //Aca había un error, cada vez que el programa ejecutaba el metodo anterior, la variable respuesta
-                    //conservava su valor en respuesta = 2, por lo que se repetia nuevamente el bucle, pero al cambiar
-                    //el valor de la variable respuesta = 0, ya queda solucionado.
-                    respuesta = 0;
+
+                    break;
+                case 0:
+                    System.out.println("Thank you for you visit");
                     break;
                 default:
-                    System.out.println("\nPor favor selecciona una respuesta correcta");
-                    break;
+                    System.out.println("Please select a correct answer");
             }
-
-        }while (respuesta != 0);
+        }while (response != 0);
     }
 
-    public static void showPatientMenu() {
-        int salirMenu = 0;
-
-        do{
-            System.out.println("\nPaciente");
-            System.out.println("1. Reservar una cita");
-            System.out.println("2. Mis citas");
-            System.out.println("0. Regresar al Menu anterior");
+    static void showPatientMenu(){
+        int response = 0;
+        do {
+            System.out.println("\n\n");
+            System.out.println("Patient");
+            System.out.println("1. Book an appointment");
+            System.out.println("2. My appointments");
+            System.out.println("0. Return");
 
             Scanner sc = new Scanner(System.in);
-            salirMenu = Integer.valueOf(sc.nextLine());
+            response = Integer.valueOf(sc.nextLine());
 
-            switch (salirMenu){
-                case 0:
-                showMenu();
-                break;
+            switch (response){
                 case 1:
-                    System.out.println(":: Cita reservada");
-                    for (int i = 0; i < 3; i++) {
-                        System.out.println((i+1) + ". " + MONTHS[i]);
+                    System.out.println("::Book an appointment");
+                    for (int i = 1; i < 4; i++) {
+                        System.out.println(i +". " + MONTHS[i]);
                     }
                     break;
                 case 2:
-                    System.out.println(":: Mis citas");
+                    System.out.println("::My appointments");
                     break;
-                default:
-                    System.out.println("\nPor favor selecciona una respuesta correcta");
+                case 0:
+                    showMenu();
                     break;
             }
-
-        }while (salirMenu != 0);
+        }while (response != 0);
     }
 }
