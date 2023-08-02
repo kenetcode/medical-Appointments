@@ -79,12 +79,10 @@ public class UIMenu {
                     if (patient.getEmail().equals(email)){
                         emailCorrect = true;
                         patientLogged = patient;
-                        //showPatientMenu
+                        UIPatientMenu.showPatientMenu();
                     }
                 }
             }
-
-
         }while (!emailCorrect);
     }
 
